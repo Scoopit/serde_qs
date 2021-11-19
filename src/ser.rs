@@ -341,7 +341,7 @@ impl<'a, W: Write> ser::SerializeTuple for QsSeq<'a, W> {
         T: ser::Serialize,
     {
         let mut serializer = QsSerializer::new_from_ref(self.0);
-        serializer.extend_key("");
+        //serializer.extend_key("");
         self.1 += 1;
         value.serialize(&mut serializer)
     }
@@ -359,7 +359,7 @@ impl<'a, W: Write> ser::SerializeSeq for QsSeq<'a, W> {
         T: ser::Serialize,
     {
         let mut serializer = QsSerializer::new_from_ref(self.0);
-        serializer.extend_key("");
+        //serializer.extend_key("");
         self.1 += 1;
         value.serialize(&mut serializer)
     }
